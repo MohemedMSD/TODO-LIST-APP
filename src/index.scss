@@ -1,0 +1,19 @@
+// import variables
+@use './compentent/Vars/vars';
+*{ 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+// ------- start styling body ----------
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: vars.$backGround;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    height: 100vh;
+    color: vars.$GreyLight;
+}
+// ------- end styling body ----------

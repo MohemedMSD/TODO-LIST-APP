@@ -1,0 +1,79 @@
+@use './Vars/vars';
+
+// ---------Start Styling Div For All Tasks ---------------
+.tasks{
+    // Styling For Div of The Task
+    .div_task{
+        animation: Enter .4s forwards linear;
+        @keyframes Enter {
+            0%{
+                transform: scale(0);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+            100%{
+                transform: scale(1.1);
+            }
+        }
+        // Styling For Div Contented Task
+        .task{
+            transition: transform 2s ease;
+            height: 70px;
+            color: vars.$backGround;
+            background: vars.$GreyLight;
+            background: linear-gradient(121deg, vars.$GreyLight 0% , vars.$Grey 63%, vars.$Grey 77%, vars.$GreyLight 100%);
+            box-shadow:  11px 11px 15px #161722,
+            -11px -11px 15px #404362;
+            background-size: 300% 100%;
+            transition: all .3s ease-in-out;
+            
+            // Styling Div Task if Completed
+            &.completed{
+                color: vars.$GreyLight;
+                background-position: 100% 0;
+                background-image: linear-gradient(121deg, vars.$GreyLight 0% , vars.$Grey 63%, vars.$Grey 77%, vars.$GreyLight 100%)
+            }
+
+            // Styling for p contented Title Task
+            p{
+                cursor: pointer;
+                margin: 0;
+                text-transform: capitalize;
+                font-size: 18px;
+                letter-spacing: 1px;
+                position: relative;
+                
+                // Styling for icon completed if task completed 
+                .Icon-completed{
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    animation: show .4s linear;
+                    @keyframes show {
+                        0%{
+                            opacity: 0;
+                        }
+                        100%{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            // div for All icons
+            .icons{
+                // styling for icon delet and edit
+                .icon{
+                    cursor: pointer;
+                    color: vars.$RedLight;
+                    &:hover{
+                        color: vars.$RedDark;
+                    }
+                }
+            }
+        }
+    }
+}
+// ---------End Styling Div For All Tasks ---------------
+

@@ -1,0 +1,85 @@
+// import variables
+@use './Vars/vars';
+
+// ------------Start Styling Header-----------------
+header{
+
+    // styling Title 
+    h1{
+        color: vars.$GreyLight;
+        text-transform: uppercase;
+        font-weight: 100;
+        animation: change-color-start 1s infinite ease-in-out forwards;
+            @keyframes change-color-start {
+                0%{
+                    text-shadow: 0 0 15px vars.$RedLight;
+                    color: vars.$RedLight;
+                }
+                50%{
+                    color: vars.$GreyLight;
+                }
+                100%{
+                    text-shadow: 0 0 15px vars.$RedLight;
+                    color: vars.$RedLight;
+                }
+            }
+
+        // Styling Second Part <LIST> 
+        span{
+            font-weight: bold;
+            animation: change-color 1s infinite ease-in-out forwards;
+            @keyframes change-color {
+                0%{
+                    color: vars.$GreyLight;
+                }
+                50%{
+                    color: vars.$RedLight;
+                    text-shadow: 0 0 15px vars.$RedLight;
+                }
+                100%{
+                    color: vars.$GreyLight;
+                }
+            }
+        }
+    }
+
+    // Selected Form
+    form{
+        // Styling Input 
+        input{
+            text-transform: capitalize;
+            background-color: transparent;
+            color: vars.$GreyLight;
+            border: 1px solid vars.$RedLight;
+            border-radius: 10px ;
+            padding: 7px 0;
+            &:focus{
+                outline: 1px solid vars.$RedDark;
+                box-shadow: 0 0 10px vars.$RedLight;
+                animation: Pop .7s linear forwards;
+                @keyframes Pop {
+                    0%{
+                        box-shadow: 0 0 15px vars.$RedLight;
+                    }
+                }
+            }
+        }
+
+        // Styling Button Add Task
+        .btn{
+            background-image: linear-gradient(to right, vars.$RedLight, #b81034, vars.$RedDark, vars.$RedLight);
+            background-size: 300% 100%;
+            border-radius: 50px;
+            transition: all .4s ease-in-out;
+            border-radius:10px;
+            border: none;
+            color: vars.$GreyLight;
+            &:hover{
+                background-position: 100% 0;
+                background-image: linear-gradient(to right, vars.$RedLight, #b81034, vars.$RedDark , vars.$RedLight);
+                box-shadow: 0 0 15px vars.$RedLight;
+            }
+        }
+    }
+}
+// ------------END Styling Header-----------------
